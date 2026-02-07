@@ -7,10 +7,11 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
+    // "baseUrl": "."  ←  removed
     "paths": {
-      "@repo/types": ["packages/types/index.ts"],
-      "@repo/api": ["packages/api/index.ts"],
-      "@repo/ui": ["packages/ui/src/index.ts"]
+      "@repo/types": ["./packages/types/index.ts"],
+      "@repo/api":   ["./packages/api/index.ts"],
+      "@repo/ui":    ["./packages/ui/src/index.ts"]
     }
   }
 }
