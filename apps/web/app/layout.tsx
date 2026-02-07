@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Header from "./components/header/page";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -21,9 +22,11 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isMaintenanceMode = process.env.NEXT_PUBLIC_SITE_UNDER_CONSTRUCTION === 'true';
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {isMaintenanceMode? null: <Header />}
         {children}
       </body>
     </html>
